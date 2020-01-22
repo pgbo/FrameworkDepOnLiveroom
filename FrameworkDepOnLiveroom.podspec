@@ -27,7 +27,9 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'FrameworkDepOnLiveroom/Classes/**/*'
-  s.pod_target_xcconfig = { 'VALID_ARCHS[sdk=iphonesimulator*]' => '' }
+  
+  # 不支持 i386
+  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64 armv7 armv7s x86_64' }
   
   # s.resource_bundles = {
   #   'FrameworkDepOnLiveroom' => ['FrameworkDepOnLiveroom/Assets/*.png']
